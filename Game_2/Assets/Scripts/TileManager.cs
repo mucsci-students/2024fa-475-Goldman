@@ -21,12 +21,15 @@ public class NewBehaviourScript : MonoBehaviour
         timer += Time.deltaTime;
         if(timer > 1f)
         {
-            timer = 0;
-            Move();
+            if(Move())
+            {
+                timer = 0;
+            }
         }
         
     }
-    void Move()
+    //returns false if no move taken
+    bool Move()
     {
         float xVel = 0f;
         float yVel = 0f;
@@ -46,11 +49,16 @@ public class NewBehaviourScript : MonoBehaviour
         {
             xVel = speed;
         }
+        else
+        {
+            return false;
+        }
         Rigidbody2D[] children = GetComponentsInChildren<Rigidbody2D>();
         foreach(Rigidbody2D body in children)
         {
             body.velocity = new Vector2(xVel, yVel);
         }
+        return true;
     }
 
 }
