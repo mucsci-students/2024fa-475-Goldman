@@ -41,3 +41,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Tile Border
+    uniqueID: 2296059391
+    locked: 0
