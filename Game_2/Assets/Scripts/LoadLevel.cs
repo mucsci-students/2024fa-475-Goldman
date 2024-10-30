@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LoadLevel : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    /*loads the selected level*/
+    public void LevelLoad(int level)
     {
-        
+        SceneManager.LoadScene(level);
     }
-
-    // Update is called once per frame
-    void Update()
+    /*quits the game*/
+    public void Quit()
     {
-        
+        Application.Quit();
     }
 }
