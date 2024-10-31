@@ -25,7 +25,9 @@ public class TileScript : MonoBehaviour
         if (other.tag == "Tile" && other.GetComponent<TileScript>().value == value)
         {
             if(otherBody.velocity.magnitude > body.velocity.magnitude){
-
+                //change for different logic
+                value *=2;
+                Destroy(other.gameObject);
             }
         }
         else if (other.tag == "Point" )
