@@ -7,7 +7,7 @@ public class TileScript : MonoBehaviour
     private SpriteRenderer sprRend;
     public bool notYetMerged = true;
 
-    [SerializeField] public float value;
+    [SerializeField] public int value;
 
     public Rigidbody2D body;
     public Vector3 point;
@@ -17,7 +17,7 @@ public class TileScript : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         sprRend = GetComponent<SpriteRenderer>();
     }
-    
+
     void OnTriggerEnter2D(Collider2D other)
     {
         Rigidbody2D otherBody = other.GetComponent<Rigidbody2D>();
@@ -25,9 +25,10 @@ public class TileScript : MonoBehaviour
         {
             if(otherBody.velocity.magnitude > body.velocity.magnitude){
                 //change for different logic
-                value = value *2;
+                value = value * 2;
                 notYetMerged = false;
-                sprRend.sprite = Resources.Load(value + "Tile") as Sprite;
+                String spriteName = value + "Tile";
+                sprRend.sprite = Resources.Load(spriteName) as Sprite;
                 Destroy(other.gameObject);
             }
         }
@@ -39,7 +40,7 @@ public class TileScript : MonoBehaviour
         {
             body.velocity = new Vector2(0, 0);
             transform.position = point;
-            notYetMerged = false;
+            notYetMerged = true;
         }
     }
 }

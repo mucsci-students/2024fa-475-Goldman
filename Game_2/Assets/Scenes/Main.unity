@@ -1643,7 +1643,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8294515345596351262, guid: e03abac0e06a0014d94f8427e41777fb, type: 3}
       propertyPath: m_Name
-      value: Board
+      value: BoardManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

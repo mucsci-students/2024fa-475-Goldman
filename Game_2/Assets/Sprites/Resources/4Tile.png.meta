@@ -126,7 +126,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Capsule
+      name: 4Tile
       rect:
         serializedVersion: 2
         x: 0
@@ -225,7 +225,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Capsule: -9095717837082945937
+      4Tile: -9095717837082945937
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
