@@ -5,7 +5,8 @@ using UnityEngine;
 public class NewBehaviourScript : MonoBehaviour
 {
     private float timer = 0f;
-    private int speed = 10;
+    private int speed = 20;
+    private float waitTime = 0.3f;
     public Manager script;
 
     void Start()
@@ -19,7 +20,7 @@ public class NewBehaviourScript : MonoBehaviour
             return;
         }
         timer += Time.deltaTime;
-        if(timer > 1f)
+        if(timer > waitTime)
         {
             if(Move())
             {

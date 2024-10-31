@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class TileScript : MonoBehaviour
 {
+    private SpriteRenderer sprRend;
+    public bool notYetMerged = true;
+
     [SerializeField] public float value;
 
     public Rigidbody2D body;
@@ -12,21 +15,19 @@ public class TileScript : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        sprRend = GetComponent<SpriteRenderer>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
     void OnTriggerEnter2D(Collider2D other)
     {
         Rigidbody2D otherBody = other.GetComponent<Rigidbody2D>();
-        if (other.tag == "Tile" && other.GetComponent<TileScript>().value == value)
+        if (other.tag == "Tile" && other.GetComponent<TileScript>().value == value && notYetMerged)
         {
             if(otherBody.velocity.magnitude > body.velocity.magnitude){
                 //change for different logic
-                value *=2;
+                value = value *2;
+                notYetMerged = false;
+                sprRend.sprite = Resources.Load(value + "Tile") as Sprite;
                 Destroy(other.gameObject);
             }
         }
@@ -38,6 +39,7 @@ public class TileScript : MonoBehaviour
         {
             body.velocity = new Vector2(0, 0);
             transform.position = point;
+            notYetMerged = false;
         }
     }
 }
