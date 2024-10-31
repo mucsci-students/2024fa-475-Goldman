@@ -5,7 +5,7 @@ using UnityEngine;
 public class NewBehaviourScript : MonoBehaviour
 {
     private float timer = 0f;
-    private int speed = 5;
+    private int speed = 10;
     public Manager script;
 
     void Start()
