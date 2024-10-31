@@ -20,19 +20,21 @@ public class TileScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        string spriteName;
         Rigidbody2D otherBody = other.GetComponent<Rigidbody2D>();
         if (other.tag == "Tile" && other.GetComponent<TileScript>().value == value && notYetMerged)
         {
-            if(otherBody.velocity.magnitude > body.velocity.magnitude){
+            if (otherBody.velocity.magnitude > body.velocity.magnitude)
+            {
                 //change for different logic
                 value = value * 2;
                 notYetMerged = false;
-                String spriteName = value + "Tile";
+                spriteName = value + "Tile";
                 sprRend.sprite = Resources.Load(spriteName) as Sprite;
                 Destroy(other.gameObject);
             }
         }
-        else if (other.tag == "Point" )
+        else if (other.tag == "Point")
         {
             point = other.GetComponent<Transform>().position;
         }
