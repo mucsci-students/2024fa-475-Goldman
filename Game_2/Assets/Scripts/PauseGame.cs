@@ -28,8 +28,7 @@ public class PauseGame : MonoBehaviour
 
     public void Restart()
     {
-        // Reset every player and game element to base values
-        // including time, position, score, health and energy, inventory, etc.
+        // Reset player elements if necessary and set time and UI properly
         Time.timeScale = 1;
         PauseMenuUI.SetActive(false);
         SceneManager.LoadScene("Main");
