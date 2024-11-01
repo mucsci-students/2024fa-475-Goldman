@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PointScript : MonoBehaviour
 {
-    private bool inUse;
+    public bool inUse;
     /*
     void Start()
     {

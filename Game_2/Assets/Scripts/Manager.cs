@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Manager : MonoBehaviour
 {
+    //public bool gameOver = false;
+    public PauseGame script;
 
     void Start()
     {
@@ -14,9 +16,9 @@ public class Manager : MonoBehaviour
     {
         
     }
-
-    void SpawnTile()
-    {
-
+    public void EndGame(){
+        //change
+        script.Pause();
     }
+
 }
