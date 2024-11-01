@@ -5,6 +5,7 @@ using UnityEngine;
 public class TileScript : MonoBehaviour
 {
     private SpriteRenderer sprRend;
+    public Sprite testSprite;
     public bool notYetMerged = true;
 
     [SerializeField] public int value;
@@ -29,8 +30,8 @@ public class TileScript : MonoBehaviour
                 //change for different logic
                 value = value * 2;
                 notYetMerged = false;
-                spriteName = value + "Tile";
-                sprRend.sprite = Resources.Load(spriteName) as Sprite;
+                testSprite = Resources.Load<Sprite>(value + "Tile");
+                sprRend.sprite = testSprite;
                 Destroy(other.gameObject);
             }
         }
