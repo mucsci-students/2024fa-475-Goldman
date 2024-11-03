@@ -7,7 +7,7 @@ public class TileManager : MonoBehaviour
     private float timer = 0f;
     private int speed = 20;
     private int maxPow = 2;
-    private float waitTime = 0.3f;
+    private float waitTime = 0.4f;
 
     public bool validMoveTaken = false;
 
@@ -75,7 +75,7 @@ public class TileManager : MonoBehaviour
     //spawns in tile at a random unused point
     IEnumerator SpawnTile()
     {
-        yield return new WaitForSeconds(.2f);
+        yield return new WaitForSeconds(.3f);
         PointScript[] points = GetComponentsInChildren<PointScript>();
         int index = Random.Range(0,16);
         //change later once fullboard done

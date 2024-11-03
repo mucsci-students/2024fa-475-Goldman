@@ -30,8 +30,9 @@ public class TileScript : MonoBehaviour
             {
                 //change for different logic
                 value = value + value;
-                
+
                 script.addScore(value); //adds score
+                
                 notYetMerged = false;
                 sprRend.sprite = Resources.Load<Sprite>(value + "Tile");
                 Destroy(other.gameObject);

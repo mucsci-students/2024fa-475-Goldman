@@ -64,6 +64,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   validMoveTaken: 0
   script: {fileID: 0}
+  track: {fileID: 1069435776418608639}
   tilePrefab: {fileID: 8404349330207716834, guid: e2abc085c6721334f88f2e2dee13cdba, type: 3}
 --- !u!114 &1069435776418608639
 MonoBehaviour:
@@ -77,6 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b310175226f1f4c47b18d8266da742cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  script: {fileID: 7783246387000629612}
 --- !u!68 &6660887136800446683
 EdgeCollider2D:
   m_ObjectHideFlags: 0
