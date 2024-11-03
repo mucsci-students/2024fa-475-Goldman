@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 2
   body: {fileID: 6504076505654325065}
-  point: {x: 0, y: 0, z: 0}
+  notYetMerged: 1
 --- !u!61 &4965258178606709908
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -209,7 +209,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 57311b5fc18f0744cb6ddb4969ac7a1f, type: 3}
+  m_Sprite: {fileID: -2413806693520163455, guid: e82b0224d3552f44ea20b9f09f84513c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
