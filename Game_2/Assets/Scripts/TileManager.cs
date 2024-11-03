@@ -12,13 +12,13 @@ public class TileManager : MonoBehaviour
     public bool validMoveTaken = false;
 
     public Manager script;
+    public ScoreTracker track;
     public GameObject tilePrefab;
 
     void Start()
     {
        //StartCoroutine(SpawnTile());
     }
-
     void Update()
     {
         if(Time.deltaTime == 0){
@@ -34,6 +34,10 @@ public class TileManager : MonoBehaviour
             }
         }
         
+    }
+    public void addScore(int value)
+    {
+        track.MainScore(value);
     }
     //returns false if no move taken, if one is taken, moves all tiles
     bool Move()
@@ -86,6 +90,8 @@ public class TileManager : MonoBehaviour
         {
             script.EndGame();
         }
+        else
+        {
             GameObject newTile = Instantiate(tilePrefab, points[index].transform.position, Quaternion.identity, this.transform);                //last value isn't counted so one is added
             int tempVal = (int)Mathf.Pow(2, Random.Range(1,maxPow+1));
             if(tempVal>2)
@@ -95,10 +101,6 @@ public class TileManager : MonoBehaviour
                 SpriteRenderer tempSprRend = newTile.GetComponent<SpriteRenderer>();
                 tempSprRend.sprite = Resources.Load<Sprite>(tempVal + "Tile");
             }
-
-        
-
+        }
     }
-
-
 }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6422794688948205514}
   - component: {fileID: 7783246387000629612}
+  - component: {fileID: 1069435776418608639}
   - component: {fileID: 6660887136800446683}
   m_Layer: 0
   m_Name: BoardManager
@@ -64,6 +65,18 @@ MonoBehaviour:
   validMoveTaken: 0
   script: {fileID: 0}
   tilePrefab: {fileID: 8404349330207716834, guid: e2abc085c6721334f88f2e2dee13cdba, type: 3}
+--- !u!114 &1069435776418608639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8294515345596351262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b310175226f1f4c47b18d8266da742cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!68 &6660887136800446683
 EdgeCollider2D:
   m_ObjectHideFlags: 0

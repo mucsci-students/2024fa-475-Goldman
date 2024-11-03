@@ -29,7 +29,9 @@ public class TileScript : MonoBehaviour
             if (otherBody.velocity.magnitude > body.velocity.magnitude)
             {
                 //change for different logic
-                value = value * 2;
+                value = value + value;
+                
+                script.addScore(value); //adds score
                 notYetMerged = false;
                 sprRend.sprite = Resources.Load<Sprite>(value + "Tile");
                 Destroy(other.gameObject);
