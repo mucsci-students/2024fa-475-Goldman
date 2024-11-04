@@ -5,20 +5,21 @@ using UnityEngine;
 public class Manager : MonoBehaviour
 {
     //public bool gameOver = false;
-    public PauseGame script;
+    public GameObject GameOverUI;
 
     void Start()
     {
-        
+
     }
 
     void Update()
     {
-        
-    }
-    public void EndGame(){
-        //change
-        script.Pause();
-    }
 
+    }
+    public void EndGame()
+    {
+        Time.timeScale = 0;
+        GameOverUI.SetActive(true);
+        //change score to current score value
+    }
 }
