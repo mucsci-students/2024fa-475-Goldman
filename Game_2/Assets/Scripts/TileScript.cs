@@ -39,7 +39,10 @@ public class TileScript : MonoBehaviour
         }
         else if (other.tag == "Point")
         {
-            script.validMoveTaken = true;
+            if(body.velocity.magnitude > 0)
+            {
+                script.validMoveTaken = true;
+            }
             point = other.gameObject;
         }
         else
@@ -49,4 +52,8 @@ public class TileScript : MonoBehaviour
             notYetMerged = true;
         }
     }
+    /*void OnTriggerStay2D(Collider2D other){
+
+        OnTriggerEnter2D(other);
+    }*/
 }

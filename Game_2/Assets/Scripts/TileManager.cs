@@ -5,7 +5,7 @@ using UnityEngine;
 public class TileManager : MonoBehaviour
 {
     private float timer = 0f;
-    private int speed = 40;
+    private int speed = 20;
     private int maxPow = 2;
     private float waitTime = 0.3f;
 
@@ -81,7 +81,9 @@ public class TileManager : MonoBehaviour
         if(!validMoveTaken)
         {
             yield break;
+            Debug.Log("broke");
         }
+        Debug.Log("not broke");
         PointScript[] points = GetComponentsInChildren<PointScript>();
         int index = Random.Range(0,16);
         //change later once fullboard done
