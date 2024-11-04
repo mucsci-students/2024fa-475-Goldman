@@ -5,11 +5,11 @@ using UnityEngine;
 public class TileManager : MonoBehaviour
 {
     private float timer = 0f;
-    private int speed = 20;
+    private int speed = 40;
     private int maxPow = 2;
-    private float waitTime = 0.4f;
+    private float waitTime = 0.3f;
 
-    public bool validMoveTaken = false;
+    public bool validMoveTaken = true;
 
     public Manager script;
     public ScoreTracker track;
@@ -17,7 +17,9 @@ public class TileManager : MonoBehaviour
 
     void Start()
     {
-       //StartCoroutine(SpawnTile());
+       /*StartCoroutine(SpawnTile());
+       validMoveTaken = true;
+       StartCoroutine(SpawnTile());*/
     }
     void Update()
     {
@@ -44,19 +46,19 @@ public class TileManager : MonoBehaviour
     {
         float xVel = 0f;
         float yVel = 0f;
-        if(Input.GetKeyDown(KeyCode.W))
+        if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             yVel = speed;
         }
-        else if(Input.GetKeyDown(KeyCode.A))
+        else if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             xVel = -speed;
         }
-        else if(Input.GetKeyDown(KeyCode.S))
+        else if(Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             yVel = -speed;
         }
-        else if(Input.GetKeyDown(KeyCode.D))
+        else if(Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             xVel = speed;
         }
@@ -75,14 +77,17 @@ public class TileManager : MonoBehaviour
     //spawns in tile at a random unused point
     IEnumerator SpawnTile()
     {
-        yield return new WaitForSeconds(.3f);
+        yield return new WaitForSeconds(.2f);
+        if(!validMoveTaken)
+        {
+            yield break;
+        }
         PointScript[] points = GetComponentsInChildren<PointScript>();
         int index = Random.Range(0,16);
         //change later once fullboard done
         int tempcounter = 0;
         while (points[index].inUse && tempcounter < 40)
         {
-            //0 through 15,as last value is not counted for (int)range
             index = Random.Range(0,16);
             tempcounter++;
         }
@@ -92,7 +97,8 @@ public class TileManager : MonoBehaviour
         }
         else
         {
-            GameObject newTile = Instantiate(tilePrefab, points[index].transform.position, Quaternion.identity, this.transform);                //last value isn't counted so one is added
+            GameObject newTile = Instantiate(tilePrefab, points[index].transform.position, Quaternion.identity, this.transform);
+            newTile.GetComponent<TileScript>().point = points[index].gameObject;
             int tempVal = (int)Mathf.Pow(2, Random.Range(1,maxPow+1));
             if(tempVal>2)
             {
@@ -102,5 +108,6 @@ public class TileManager : MonoBehaviour
                 tempSprRend.sprite = Resources.Load<Sprite>(tempVal + "Tile");
             }
         }
+        validMoveTaken = false;
     }
 }

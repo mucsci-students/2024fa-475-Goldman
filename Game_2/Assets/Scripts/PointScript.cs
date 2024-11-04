@@ -15,7 +15,7 @@ public class PointScript : MonoBehaviour
     {
         if (other.tag == "Tile")
         {
-            inUse = false;
+            inUse = true;
         }
     }
 
@@ -23,7 +23,7 @@ public class PointScript : MonoBehaviour
     {
         if (other.tag == "Tile")
         {
-            inUse = true;
+            inUse = false;
         }
     }
 }

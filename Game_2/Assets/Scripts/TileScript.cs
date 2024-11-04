@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TileScript : MonoBehaviour
 {
-    private Vector3 point;
+    public GameObject point;
     private SpriteRenderer sprRend;
     private TileManager script;
     
@@ -28,25 +28,24 @@ public class TileScript : MonoBehaviour
             script.validMoveTaken = true;
             if (otherBody.velocity.magnitude > body.velocity.magnitude)
             {
-                //change for different logic
-                value = value + value;
-
+                value = value + value; //change for different logic
                 script.addScore(value); //adds score
-                
                 notYetMerged = false;
                 sprRend.sprite = Resources.Load<Sprite>(value + "Tile");
                 Destroy(other.gameObject);
+                body.velocity = new Vector2(0, 0);
+                transform.position = point.transform.position;
             }
         }
         else if (other.tag == "Point")
         {
-            point = other.GetComponent<Transform>().position;
             script.validMoveTaken = true;
+            point = other.gameObject;
         }
         else
         {
             body.velocity = new Vector2(0, 0);
-            transform.position = point;
+            transform.position = point.transform.position;
             notYetMerged = true;
         }
     }
