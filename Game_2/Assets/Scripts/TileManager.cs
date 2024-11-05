@@ -8,6 +8,7 @@ public class TileManager : MonoBehaviour
     private int speed = 20;
     private int maxPow = 2;
     private float waitTime = 0.3f;
+    private int tileCounter;
 
     public bool validMoveTaken = true;
 
@@ -17,9 +18,8 @@ public class TileManager : MonoBehaviour
 
     void Start()
     {
-       /*StartCoroutine(SpawnTile());
-       validMoveTaken = true;
-       StartCoroutine(SpawnTile());*/
+       StartCoroutine(SpawnTile());
+       StartCoroutine(SpawnTile());
     }
     void Update()
     {
@@ -78,15 +78,16 @@ public class TileManager : MonoBehaviour
     IEnumerator SpawnTile()
     {
         yield return new WaitForSeconds(.2f);
-        if(!validMoveTaken)
+        if(!validMoveTaken && tileCounter > 1)
         {
-            yield break;
             Debug.Log("broke");
+            yield break;
         }
+        tileCounter++;
         Debug.Log("not broke");
         PointScript[] points = GetComponentsInChildren<PointScript>();
         int index = Random.Range(0,16);
-        //change later once fullboard done
+        //once counter hits 40 assume that board is full
         int tempcounter = 0;
         while (points[index].inUse && tempcounter < 40)
         {
@@ -100,12 +101,15 @@ public class TileManager : MonoBehaviour
         else
         {
             GameObject newTile = Instantiate(tilePrefab, points[index].transform.position, Quaternion.identity, this.transform);
-            newTile.GetComponent<TileScript>().point = points[index].gameObject;
+            TileScript newScript = newTile.GetComponent<TileScript>();
+            newScript.point = points[index];
+            points[index].inUse = true;
+            points[index].currentTile = newTile;
             int tempVal = (int)Mathf.Pow(2, Random.Range(1,maxPow+1));
             if(tempVal>2)
             {
                 //sets new tile's value and sprite, if more than the default
-                newTile.GetComponent<TileScript>().value = tempVal;
+                newScript.value = tempVal;
                 SpriteRenderer tempSprRend = newTile.GetComponent<SpriteRenderer>();
                 tempSprRend.sprite = Resources.Load<Sprite>(tempVal + "Tile");
             }

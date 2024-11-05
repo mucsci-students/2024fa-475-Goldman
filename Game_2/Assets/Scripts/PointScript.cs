@@ -5,6 +5,8 @@ using UnityEngine;
 public class PointScript : MonoBehaviour
 {
     public bool inUse;
+
+    public GameObject currentTile;
     /*
     void Start()
     {
@@ -15,15 +17,8 @@ public class PointScript : MonoBehaviour
     {
         if (other.tag == "Tile")
         {
+            currentTile = other.gameObject;
             inUse = true;
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.tag == "Tile")
-        {
-            inUse = false;
         }
     }
 }
