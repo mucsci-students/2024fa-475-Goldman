@@ -8,15 +8,6 @@ public class ScoreTracker : MonoBehaviour {
     int highestTile = 2;
     int score = 0;
 
-void Start()
-{
-    
-}
-
-void Update()
-{
-
-}
 
 public void MainScore(int tileVal){
     score +=tileVal;
@@ -24,7 +15,5 @@ public void MainScore(int tileVal){
         highestTile = 2;
     }
 }
-
-
 
 }
