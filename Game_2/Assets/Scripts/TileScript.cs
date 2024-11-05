@@ -23,7 +23,7 @@ public class TileScript : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         
-        if (other.tag == "Tile" && other.GetComponent<TileScript>().value == value && notYetMerged)
+        if (other.tag == "Tile" && other.GetComponent<TileScript>().value == value && notYetMerged && other.GetComponent<TileScript>().notYetMerged)
         {
             script.validMoveTaken = true;
             if (KeepTile(other))
@@ -50,7 +50,6 @@ public class TileScript : MonoBehaviour
         {
             body.velocity = new Vector2(0, 0);
             transform.position = point.transform.position;
-            notYetMerged = true;
         }
     }
     /* checks if this tile should remain from merging with another

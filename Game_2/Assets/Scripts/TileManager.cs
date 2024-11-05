@@ -66,6 +66,12 @@ public class TileManager : MonoBehaviour
         {
             return false;
         }
+        //allows merging
+        TileScript[] scripts = GetComponentsInChildren<TileScript>();
+        foreach(TileScript TS in scripts)
+        {
+            TS.notYetMerged = true;
+        }
         //gets all tiles under object
         Rigidbody2D[] children = GetComponentsInChildren<Rigidbody2D>();
         foreach(Rigidbody2D body in children)
@@ -80,11 +86,9 @@ public class TileManager : MonoBehaviour
         yield return new WaitForSeconds(.2f);
         if(!validMoveTaken && tileCounter > 1)
         {
-            Debug.Log("broke");
             yield break;
         }
         tileCounter++;
-        Debug.Log("not broke");
         PointScript[] points = GetComponentsInChildren<PointScript>();
         int index = Random.Range(0,16);
         //once counter hits 40 assume that board is full

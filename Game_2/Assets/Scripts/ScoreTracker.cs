@@ -14,6 +14,7 @@ public void MainScore(int tileVal){
     if (tileVal > highestTile){
         highestTile = 2;
     }
+    //Debug.Log(score);
 }
 
 }
