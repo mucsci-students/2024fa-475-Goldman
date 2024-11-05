@@ -33,13 +33,12 @@ public class TileScript : MonoBehaviour
         }
         else if (other.tag == "Point")
         {
-            if(body.velocity.magnitude > 0)
+            if(body.velocity.magnitude > 0 && other.GetComponent<PointScript>().currentTile != this.gameObject)
             {
-               // script.validMoveTaken = true;
+               script.validMoveTaken = true;
             }
-            if(point.currentTile == this.gameObject && body.velocity.magnitude > 0)
+            if(point.currentTile == this.gameObject)
             {
-                script.validMoveTaken = true;
                 point.inUse = false;
                 point.currentTile = null;
             }
