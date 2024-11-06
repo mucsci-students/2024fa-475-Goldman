@@ -84,6 +84,7 @@ public class TileScript : MonoBehaviour
     {
         value = value + value; //change for different logic
         script.addScore(value); //adds score
+        script.numTiles--;
         notYetMerged = false;
         //resets other tile's point
         PointScript otherPoint = other.GetComponent<TileScript>().point;
