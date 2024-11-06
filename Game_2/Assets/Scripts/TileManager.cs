@@ -7,9 +7,10 @@ public class TileManager : MonoBehaviour
     private float timer = 0f;
     private int speed = 20;
     private int maxPow = 2;
-    private float waitTime = 0.3f;
-    private int tileCounter;
+    private float waitTime = 0.4f;
+    private int moveCounter = -1;
 
+    public int numTiles;
     public bool validMoveTaken = true;
 
     public Manager script;
@@ -83,22 +84,22 @@ public class TileManager : MonoBehaviour
     //spawns in tile at a random unused point
     IEnumerator SpawnTile()
     {
-        yield return new WaitForSeconds(.2f);
-        if(!validMoveTaken && tileCounter > 1)
+        yield return new WaitForSeconds(waitTime - 0.1f);
+        if(!validMoveTaken && moveCounter > 0)
         {
             yield break;
         }
-        tileCounter++;
+        moveCounter++;
         PointScript[] points = GetComponentsInChildren<PointScript>();
         int index = Random.Range(0,16);
         //once counter hits 40 assume that board is full
         int tempcounter = 0;
-        while (points[index].inUse && tempcounter < 40)
+        while (points[index].inUse && tempcounter < 64)
         {
             index = Random.Range(0,16);
             tempcounter++;
         }
-        if(tempcounter == 40)
+        if(tempcounter == 64)
         {
             script.EndGame();
         }
@@ -117,6 +118,7 @@ public class TileManager : MonoBehaviour
                 SpriteRenderer tempSprRend = newTile.GetComponent<SpriteRenderer>();
                 tempSprRend.sprite = Resources.Load<Sprite>(tempVal + "Tile");
             }
+            numTiles++;
         }
         validMoveTaken = false;
     }
