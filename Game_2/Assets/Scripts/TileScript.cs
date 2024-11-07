@@ -81,11 +81,16 @@ public class TileScript : MonoBehaviour
     }
     //updates tile with new values and deletes old one
     void TileMerge(Collider2D other)
-    {
+    {   
+        if(!notYetMerged || !other.GetComponent<TileScript>().notYetMerged)
+        {
+            return;
+        }
         value = value + value; //change for different logic
         script.addScore(value); //adds score
         script.numTiles--;
         notYetMerged = false;
+        other.GetComponent<TileScript>().notYetMerged = false;
         //resets other tile's point
         PointScript otherPoint = other.GetComponent<TileScript>().point;
         if(otherPoint.currentTile == other.gameObject)

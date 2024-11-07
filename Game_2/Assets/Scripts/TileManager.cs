@@ -70,11 +70,13 @@ public class TileManager : MonoBehaviour
         {
             return false;
         }
+        
         //allows merging
         TileScript[] scripts = GetComponentsInChildren<TileScript>();
         foreach (TileScript TS in scripts)
         {
             TS.notYetMerged = true;
+
         }
         //gets all tiles under object
         Rigidbody2D[] children = GetComponentsInChildren<Rigidbody2D>();
@@ -124,5 +126,15 @@ public class TileManager : MonoBehaviour
             numTiles++;
         }
         validMoveTaken = false;
+    }
+    bool NoMoves()
+    {
+        TileScript[] scripts = GetComponentsInChildren<TileScript>();
+        foreach (TileScript TS in scripts)
+        {
+            TS.notYetMerged = true;
+
+        }
+        return false;
     }
 }

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Manager : MonoBehaviour
 {
-    //public bool gameOver = false;
-    public GameObject GameOverUI;
+    public bool isGameOver = false;
+    public PauseGame menu;
 
     void Start()
     {
@@ -18,8 +18,9 @@ public class Manager : MonoBehaviour
     }
     public void EndGame()
     {
+        isGameOver = true;
         Time.timeScale = 0;
-        GameOverUI.SetActive(true);
+        menu.GameOver();
         //change score to current score value
     }
 }

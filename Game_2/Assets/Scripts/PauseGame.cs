@@ -2,13 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PauseGame : MonoBehaviour
 {
-    public GameObject PauseMenuUI;
-    // public GameObject[] player;
 
+    public GameObject PauseMenuUI;
+    public GameObject GameOverUI;
+    
+    public Text finalScore;
+
+    public Text scoreText;
+    public Manager script;
+    // public GameObject[] player;
+    public void GameOver()
+    {
+        GameOverUI.SetActive(true);
+        finalScore.text = "SCORE: " + scoreText.text.Substring(7);
+    }
     public void Pause()
     {
         // if not paused
@@ -18,7 +30,7 @@ public class PauseGame : MonoBehaviour
             Time.timeScale = 0;
             PauseMenuUI.SetActive(true);
         }
-        else
+        else if(!script.isGameOver)// if game ended don't unpause
         {
             // if paused, resume game and remove pause menu
             Time.timeScale = 1;
@@ -31,6 +43,7 @@ public class PauseGame : MonoBehaviour
         // Reset player elements if necessary and set time and UI properly
         Time.timeScale = 1;
         PauseMenuUI.SetActive(false);
+        GameOverUI.SetActive(false);
         SceneManager.LoadScene("Main");
     }
 
