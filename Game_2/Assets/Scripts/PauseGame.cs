@@ -40,6 +40,11 @@ public class PauseGame : MonoBehaviour
         Application.Quit();
     }
 
+    public void TitleScreen()
+    {
+        SceneManager.LoadScene("Title Screen");
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
