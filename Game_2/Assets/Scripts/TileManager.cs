@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class TileManager : MonoBehaviour
 {
-    private float timer = 0f;
+    private float timer;
     private int speed = 20;
     private int maxPow = 2;
     private float waitTime = 0.4f;
-    private int moveCounter = -1;
+    private int moveCounter
 
     public int numTiles;
     public bool validMoveTaken = true;
@@ -19,8 +19,10 @@ public class TileManager : MonoBehaviour
 
     void Start()
     {
-       StartCoroutine(SpawnTile());
-       StartCoroutine(SpawnTile());
+        moveCounter = -1;
+        timer = 0;
+        StartCoroutine(SpawnTile());
+        StartCoroutine(SpawnTile());
     }
     void Update()
     {
