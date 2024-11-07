@@ -1929,7 +1929,15 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8109124028280099839, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 9101925817403339760, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9168151060247993842, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
