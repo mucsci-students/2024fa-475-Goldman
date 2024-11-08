@@ -7,7 +7,7 @@ public class TileManager : MonoBehaviour
     private float timer;
     private int speed = 20;
     private int maxPow = 2;
-    private float waitTime = 0.4f;
+    private float waitTime = 0.3f;
     private int moveCounter;
 
     public int numTiles;
@@ -34,7 +34,7 @@ public class TileManager : MonoBehaviour
         timer += Time.deltaTime;
         if (timer > waitTime)
         {
-            if (Move())
+            if (MoveTaken())
             {
                 timer = 0;
                 StartCoroutine(SpawnTile());
@@ -47,47 +47,93 @@ public class TileManager : MonoBehaviour
         track.MainScore(value);
     }
     //returns false if no move taken, if one is taken, moves all tiles
-    bool Move()
+    bool MoveTaken()
     {
-        float xVel = 0f;
-        float yVel = 0f;
+        if(numTiles == 16 && NoMoves())
+        {
+            timer = 0;
+            script.EndGame();
+            return false;
+        }
+        //gets list of all points
+        PointScript[] pointList = GetComponentsInChildren<PointScript>();
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
-            yVel = speed;
+            direction = new Vector2(0, speed);
+            foreach(PointScript point in pointList)
+            {
+                if(point.currentTile != null)
+                {
+                    point.currentTile.GetComponent<Rigidbody2D>().velocity = direction;
+                }
+            }
         }
         else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            xVel = -speed;
+            direction = new Vector2(-speed, 0);
+            for(int i = 0; i < 4; i ++){//iterate right by columns
+                for(int j = i; j < 16; j += 4){
+                    if(pointList[j].currentTile != null)
+                    {
+                        pointList[j].currentTile.GetComponent<Rigidbody2D>().velocity = direction;
+                    }
+                }
+            }
         }
         else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
-            yVel = -speed;
+            direction = new Vector2(0, -speed);
+            for(int i = 12; i >= 0; i -= 4){//iterate up by rows
+                for(int j = i; j < i + 4; j++){
+                    if(pointList[j].currentTile != null)
+                    {
+                        pointList[j].currentTile.GetComponent<Rigidbody2D>().velocity = direction;
+                    }
+                }
+            }
         }
         else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
-            xVel = speed;
+            direction = new Vector2(speed, 0);
+            for(int i = 3; i >= 0; i--){//iterate left by columns
+                for(int j = i; j < 16; j += 4){
+                    if(pointList[j].currentTile != null)
+                    {
+                        pointList[j].currentTile.GetComponent<Rigidbody2D>().velocity = direction;
+                    }
+                }
+            }
         }
         else
         {
+            direction = new Vector2(0,0);
             return false;
         }
-        
-        //allows merging
+        return true;
+        //gets all tiles under object
+    }
+    //checks if any valid moves left
+    bool NoMoves()
+    {
         TileScript[] scripts = GetComponentsInChildren<TileScript>();
         foreach (TileScript TS in scripts)
         {
-            TS.notYetMerged = true;
-
-        }
-        direction = new Vector2(xVel, yVel);
-        //gets all tiles under object
-        Rigidbody2D[] children = GetComponentsInChildren<Rigidbody2D>();
-        foreach (Rigidbody2D body in children)
-        {
-            body.velocity = direction;
+            foreach(Vector2 vec in new Vector3[] {Vector2.up, Vector2.right})
+            {
+                RaycastHit2D hit = Physics2D.Raycast(TS.transform.position, vec, out hit);
+                Debug.Log(hit.collider);
+                if(hit.collider != null)
+                {
+                    if(hit.collider.GetComponent<TileScript>().value == TS.value)
+                    {
+                        return false;
+                    }
+                }
+            }
         }
         return true;
     }
+
     //spawns in tile at a random unused point
     IEnumerator SpawnTile()
     {
@@ -128,15 +174,5 @@ public class TileManager : MonoBehaviour
             numTiles++;
         }
         validMoveTaken = false;
-    }
-    bool NoMoves()
-    {
-        TileScript[] scripts = GetComponentsInChildren<TileScript>();
-        foreach (TileScript TS in scripts)
-        {
-            TS.notYetMerged = true;
-
-        }
-        return false;
     }
 }

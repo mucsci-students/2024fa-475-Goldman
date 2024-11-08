@@ -29,10 +29,12 @@ public class TileScript : MonoBehaviour
             if (KeepTile(other))
             {
                 TileMerge(other);
+                StartCoroutine(AllowMerge());
             }
         }
         else if (other.tag == "Point")
         {
+            //only valid move if a new point is hit, not the current one
             if(body.velocity.magnitude > 0 && other.GetComponent<PointScript>().currentTile != this.gameObject)
             {
                script.validMoveTaken = true;
@@ -52,19 +54,11 @@ public class TileScript : MonoBehaviour
             transform.position = point.transform.position;
         }
     }
-    /* checks if this tile should remain from merging with another
-     * if this tile has higher velocity then keep the other one
-     * if velocity is equal (edge case), then check if this tile is in direction of movement
+    /* checks if this tile should remain from merging with another, if in direction of movement
      * ex: if tile is on left when both are moving left, then keep it and delete the other
     */
     bool KeepTile(Collider2D other)
     {
-        /*Rigidbody2D otherBody = other.GetComponent<Rigidbody2D>();
-        if(body.velocity.magnitude > otherBody.velocity.magnitude)
-        {
-            return false;
-        }*/
-        //check each possible direction of movement to solve edge case
         float velX = script.direction.x;
         float velY = script.direction.y;
         //check if this tile and movement are left or this tile and movement are right
@@ -104,5 +98,9 @@ public class TileScript : MonoBehaviour
         body.velocity = new Vector2(0, 0);
         transform.position = point.transform.position;
     }
-    
+    IEnumerator AllowMerge()
+    {
+        yield return new WaitForSeconds(0.2f);
+        notYetMerged = true;
+    }
 }
