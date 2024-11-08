@@ -1,10 +1,7 @@
 fileFormatVersion: 2
 guid: 808e51e6314b1da498e2bc00303148da
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -2135585597343286014
-    second: Hexagon Pointed-Top
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -56,7 +53,7 @@ TextureImporter:
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: 0
+  spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -68,7 +65,7 @@ TextureImporter:
   ignorePngGamma: 0
   applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -96,86 +93,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hexagon Pointed-Top
+      name: 16Tile_0
       rect:
         serializedVersion: 2
-        x: 15
+        x: 0
         y: 0
-        width: 226
-        height: 256
+        width: 256
+        height: 255
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 128}
-        - {x: -113, y: 65}
-        - {x: -113, y: -65}
-        - {x: -4, y: -128}
-        - {x: 4, y: -128}
-        - {x: 113, y: -65}
-        - {x: 113, y: 65}
-        - {x: 4, y: 128}
-      physicsShape:
-      - - {x: -111, y: 64}
-        - {x: -111, y: -64}
-        - {x: 0, y: -128}
-        - {x: 111, y: -64}
-        - {x: 111, y: 64}
-        - {x: 0, y: 128}
+      outline: []
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20db9eac630ec52e0800000000000000
-      internalID: -2135585597343286014
+      spriteID: 471a11e01ca1c834ba62115d5dedc4fa
+      internalID: -911377257
       vertices: []
       indices: 
       edges: []
       weights: []
-    outline:
-    - - {x: -4, y: 128}
-      - {x: -113, y: 65}
-      - {x: -113, y: -65}
-      - {x: -4, y: -128}
-      - {x: 4, y: -128}
-      - {x: 113, y: -65}
-      - {x: 113, y: 65}
-      - {x: 4, y: 128}
-    physicsShape:
-    - - {x: -111, y: 64}
-      - {x: -111, y: -64}
-      - {x: 0, y: -128}
-      - {x: 111, y: -64}
-      - {x: 111, y: 64}
-      - {x: 0, y: 128}
+    outline: []
+    physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
@@ -185,7 +128,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Hexagon Pointed-Top: -2135585597343286014
+      16Tile_0: -911377257
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
