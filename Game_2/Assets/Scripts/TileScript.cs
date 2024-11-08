@@ -59,14 +59,14 @@ public class TileScript : MonoBehaviour
     */
     bool KeepTile(Collider2D other)
     {
-        Rigidbody2D otherBody = other.GetComponent<Rigidbody2D>();
+        /*Rigidbody2D otherBody = other.GetComponent<Rigidbody2D>();
         if(body.velocity.magnitude > otherBody.velocity.magnitude)
         {
             return false;
-        }
+        }*/
         //check each possible direction of movement to solve edge case
-        float velX = otherBody.velocity.x + body.velocity.x;
-        float velY = otherBody.velocity.y + body.velocity.y;
+        float velX = script.direction.x;
+        float velY = script.direction.y;
         //check if this tile and movement are left or this tile and movement are right
         if(transform.position.x < other.transform.position.x && velX < 0 || transform.position.x > other.transform.position.x && velX > 0)
         {

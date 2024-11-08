@@ -157,7 +157,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3084251201456246785}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseGame, Assembly-CSharp
         m_MethodName: Restart
         m_Mode: 1
@@ -276,7 +276,7 @@ RectTransform:
   m_GameObject: {fileID: 867340957380323357}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.975, y: 1.975, z: 1.975}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 568735973336680263}
@@ -737,7 +737,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3084251201456246785}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseGame, Assembly-CSharp
         m_MethodName: TitleScreen
         m_Mode: 1
@@ -1963,7 +1963,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3084251201456246785}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseGame, Assembly-CSharp
         m_MethodName: TitleScreen
         m_Mode: 1
@@ -2291,7 +2291,7 @@ GameObject:
   - component: {fileID: 8647416886638708469}
   - component: {fileID: 7327795876986320091}
   m_Layer: 5
-  m_Name: GameOver
+  m_Name: GameOverBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2477,7 +2477,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3084251201456246785}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseGame, Assembly-CSharp
         m_MethodName: Pause
         m_Mode: 1
@@ -3045,7 +3045,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3084251201456246785}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseGame, Assembly-CSharp
         m_MethodName: Restart
         m_Mode: 1
@@ -3499,7 +3499,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3084251201456246785}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseGame, Assembly-CSharp
         m_MethodName: Quit
         m_Mode: 1
@@ -3793,7 +3793,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3084251201456246785}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseGame, Assembly-CSharp
         m_MethodName: Pause
         m_Mode: 1
@@ -3816,7 +3816,6 @@ GameObject:
   - component: {fileID: 4317576658884528055}
   - component: {fileID: 8733733576869039951}
   - component: {fileID: 6291131822042565486}
-  - component: {fileID: 3084251201456246785}
   m_Layer: 5
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -3889,23 +3888,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3084251201456246785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9101925817403339760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 490dfc1492669f848830e4a76de0af79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PauseMenuUI: {fileID: 9101925817403339760}
-  GameOverUI: {fileID: 5536245817047403361}
-  finalScore: {fileID: 8109124028280099839}
-  scoreText: {fileID: 929869585814397553}
-  script: {fileID: 0}
 --- !u!1 &9168151060247993842
 GameObject:
   m_ObjectHideFlags: 0

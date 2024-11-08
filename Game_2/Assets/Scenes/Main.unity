@@ -206,6 +206,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &229850168 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9168151060247993842, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
+  m_PrefabInstance: {fileID: 2992456432397650495}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &584119881
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,7 +398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGameOver: 0
-  menu: {fileID: 1174637999}
+  menu: {fileID: 1926764553}
 --- !u!4 &1078936611
 Transform:
   m_ObjectHideFlags: 0
@@ -477,17 +482,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1174637999 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3084251201456246785, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
-  m_PrefabInstance: {fileID: 2992456432397650495}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 490dfc1492669f848830e4a76de0af79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1460307733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1911,6 +1905,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1926764553 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7156854279340493256, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
+  m_PrefabInstance: {fileID: 2992456432397650495}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 490dfc1492669f848830e4a76de0af79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2012606803
 GameObject:
   m_ObjectHideFlags: 0
@@ -2208,6 +2213,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5540379573348019855, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5540379573348019855, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5540379573348019855, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5540379573348019855, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -2263,6 +2280,10 @@ PrefabInstance:
       propertyPath: script
       value: 
       objectReference: {fileID: 1078936610}
+    - target: {fileID: 7156854279340493256, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
+      propertyPath: GameOverUI
+      value: 
+      objectReference: {fileID: 229850168}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -11,7 +11,8 @@ public class TileManager : MonoBehaviour
     private int moveCounter;
 
     public int numTiles;
-    public bool validMoveTaken = true;
+    public bool validMoveTaken;
+    public Vector2 direction;
 
     public Manager script;
     public ScoreTracker track;
@@ -78,11 +79,12 @@ public class TileManager : MonoBehaviour
             TS.notYetMerged = true;
 
         }
+        direction = new Vector2(xVel, yVel);
         //gets all tiles under object
         Rigidbody2D[] children = GetComponentsInChildren<Rigidbody2D>();
         foreach (Rigidbody2D body in children)
         {
-            body.velocity = new Vector2(xVel, yVel);
+            body.velocity = direction;
         }
         return true;
     }
