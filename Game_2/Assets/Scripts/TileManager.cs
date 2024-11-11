@@ -124,11 +124,10 @@ public class TileManager : MonoBehaviour
         TileScript[] scripts = GetComponentsInChildren<TileScript>();
         foreach (TileScript TS in scripts)
         {
-            foreach (Vector2 vec in new Vector3[] { Vector2.up, Vector2.right })
+            foreach (Vector2 vec in new Vector2[] { Vector2.up, Vector2.right })
             {
                 RaycastHit2D hit = Physics2D.Raycast(TS.transform.position, vec);
-                Debug.Log(hit.collider);
-                if (hit.collider != null)
+                if (hit.collider != null && hit.collider.tag == "Tile")
                 {
                     if (hit.collider.GetComponent<TileScript>().value == TS.value)
                     {
@@ -138,6 +137,10 @@ public class TileManager : MonoBehaviour
             }
         }
         return true;
+    }
+    IEnumerator MoveTiles()
+    {
+        yield break;
     }
 
     //spawns in tile at a random unused point
