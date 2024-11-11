@@ -49,7 +49,7 @@ public class TileManager : MonoBehaviour
     //returns false if no move taken, if one is taken, moves all tiles
     bool MoveTaken()
     {
-        if(numTiles == 16 && NoMoves())
+        if (numTiles == 16 && NoMoves())
         {
             timer = 0;
             script.EndGame();
@@ -60,9 +60,9 @@ public class TileManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             direction = new Vector2(0, speed);
-            foreach(PointScript point in pointList)
+            foreach (PointScript point in pointList)
             {
-                if(point.currentTile != null)
+                if (point.currentTile != null)
                 {
                     point.currentTile.GetComponent<Rigidbody2D>().velocity = direction;
                 }
@@ -71,9 +71,11 @@ public class TileManager : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             direction = new Vector2(-speed, 0);
-            for(int i = 0; i < 4; i ++){//iterate right by columns
-                for(int j = i; j < 16; j += 4){
-                    if(pointList[j].currentTile != null)
+            for (int i = 0; i < 4; i++)
+            {//iterate right by columns
+                for (int j = i; j < 16; j += 4)
+                {
+                    if (pointList[j].currentTile != null)
                     {
                         pointList[j].currentTile.GetComponent<Rigidbody2D>().velocity = direction;
                     }
@@ -83,9 +85,11 @@ public class TileManager : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             direction = new Vector2(0, -speed);
-            for(int i = 12; i >= 0; i -= 4){//iterate up by rows
-                for(int j = i; j < i + 4; j++){
-                    if(pointList[j].currentTile != null)
+            for (int i = 12; i >= 0; i -= 4)
+            {//iterate up by rows
+                for (int j = i; j < i + 4; j++)
+                {
+                    if (pointList[j].currentTile != null)
                     {
                         pointList[j].currentTile.GetComponent<Rigidbody2D>().velocity = direction;
                     }
@@ -95,9 +99,11 @@ public class TileManager : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             direction = new Vector2(speed, 0);
-            for(int i = 3; i >= 0; i--){//iterate left by columns
-                for(int j = i; j < 16; j += 4){
-                    if(pointList[j].currentTile != null)
+            for (int i = 3; i >= 0; i--)
+            {//iterate left by columns
+                for (int j = i; j < 16; j += 4)
+                {
+                    if (pointList[j].currentTile != null)
                     {
                         pointList[j].currentTile.GetComponent<Rigidbody2D>().velocity = direction;
                     }
@@ -106,7 +112,7 @@ public class TileManager : MonoBehaviour
         }
         else
         {
-            direction = new Vector2(0,0);
+            direction = new Vector2(0, 0);
             return false;
         }
         return true;
@@ -118,13 +124,13 @@ public class TileManager : MonoBehaviour
         TileScript[] scripts = GetComponentsInChildren<TileScript>();
         foreach (TileScript TS in scripts)
         {
-            foreach(Vector2 vec in new Vector3[] {Vector2.up, Vector2.right})
+            foreach (Vector2 vec in new Vector3[] { Vector2.up, Vector2.right })
             {
-                RaycastHit2D hit = Physics2D.Raycast(TS.transform.position, vec, out hit);
+                RaycastHit2D hit = Physics2D.Raycast(TS.transform.position, vec);
                 Debug.Log(hit.collider);
-                if(hit.collider != null)
+                if (hit.collider != null)
                 {
-                    if(hit.collider.GetComponent<TileScript>().value == TS.value)
+                    if (hit.collider.GetComponent<TileScript>().value == TS.value)
                     {
                         return false;
                     }
