@@ -2171,6 +2171,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2570349646097765302, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570349646097765302, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570349646097765302, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570349646097765302, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570349646097765302, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 169.79352
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570349646097765302, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 47.52539
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570349646097765302, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -100.054596
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570349646097765302, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -130.9238
+      objectReference: {fileID: 0}
     - target: {fileID: 5540379573348019855, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2249,6 +2281,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5540379573348019855, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438969520682795223, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438969520682795223, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438969520682795223, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
+      propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7156854279340493256, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
