@@ -146,16 +146,17 @@ public class TileManager : MonoBehaviour
     {
         PointScript[] pointList = GetComponentsInChildren<PointScript>();
         for (int i = iStart; i >= 0 && i < iEnd; i += iInc)
-            {//iterate left by columns
-                for (int j = i; j < 16 && j < i + jEnd; j += jInc)
+        {
+            yield return new WaitForSeconds(0.01f);
+            //iterate left by columns
+            for (int j = i; j < 16 && j < i + jEnd; j += jInc)
+            {
+                if (pointList[j].currentTile != null)
                 {
-                    if (pointList[j].currentTile != null)
-                    {
-                        pointList[j].currentTile.GetComponent<Rigidbody2D>().velocity = direction;
-                    }
+                    pointList[j].currentTile.GetComponent<Rigidbody2D>().velocity = direction;
                 }
             }
-        yield break;
+        }
     }
 
     //spawns in tile at a random unused point
