@@ -5,7 +5,7 @@ using UnityEngine;
 public class TileManager : MonoBehaviour
 {
     private float timer;
-    private int speed = 20;
+    private int speed = 30;
     private int maxPow = 2;
     private float waitTime = 0.3f;
     private int moveCounter;
@@ -63,59 +63,21 @@ public class TileManager : MonoBehaviour
         {
             direction = new Vector2(0, speed);
             StartCoroutine(MoveTiles(4, 16, 4, 4, 1));
-            /*foreach (PointScript point in pointList)
-            {
-                if (point.currentTile != null)
-                {
-                    point.currentTile.GetComponent<Rigidbody2D>().velocity = direction;
-                }
-            }*/
         }
         else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             direction = new Vector2(-speed, 0);
-            StartCoroutine(MoveTiles(0, 4, 1, 16, 4));
-            /*for (int i = 0; i < 4; i++)
-            {//iterate right by columns
-                for (int j = i; j < 16; j += 4)
-                {
-                    if (pointList[j].currentTile != null)
-                    {
-                        pointList[j].currentTile.GetComponent<Rigidbody2D>().velocity = direction;
-                    }
-                }
-            }*/
+            StartCoroutine(MoveTiles(1, 4, 1, 16, 4));
         }
         else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             direction = new Vector2(0, -speed);
-            StartCoroutine(MoveTiles(12, 13, -4, 4, 1));
-            /*for (int i = 12; i >= 0; i -= 4)
-            {//iterate up by rows
-                for (int j = i; j < i + 4; j++)
-                {
-                    if (pointList[j].currentTile != null)
-                    {
-                        pointList[j].currentTile.GetComponent<Rigidbody2D>().velocity = direction;
-                    }
-                }
-            }*/
+            StartCoroutine(MoveTiles(8, 13, -4, 4, 1));
         }
         else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             direction = new Vector2(speed, 0);
-            StartCoroutine(MoveTiles(3, 4, -1, 16, 4));
-            /*
-            for (int i = 3; i >= 0; i--)
-            {//iterate left by columns
-                for (int j = i; j < 16; j += 4)
-                {
-                    if (pointList[j].currentTile != null)
-                    {
-                        pointList[j].currentTile.GetComponent<Rigidbody2D>().velocity = direction;
-                    }
-                }
-            }*/
+            StartCoroutine(MoveTiles(2, 4, -1, 16, 4));
         }
         else
         {
@@ -150,7 +112,7 @@ public class TileManager : MonoBehaviour
         PointScript[] pointList = GetComponentsInChildren<PointScript>();
         for (int i = iStart; i >= 0 && i < iEnd; i += iInc)
         {
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(0.017f);
             //iterate left by columns
             for (int j = i; j < 16 && j < i + jEnd; j += jInc)
             {
@@ -160,6 +122,7 @@ public class TileManager : MonoBehaviour
                 }
             }
         }
+        timer = 0;
     }
 
     //spawns in tile at a random unused point

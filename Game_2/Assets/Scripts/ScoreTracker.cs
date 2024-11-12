@@ -12,8 +12,10 @@ public class ScoreTracker : MonoBehaviour {
 
     void Start()
     {
-        score = PlayerPrefs.GetInt("MainScore", 0);
+        //score = PlayerPrefs.GetInt("MainTile", 0);
+        
         highestTile = PlayerPrefs.GetInt("MainTile", 4);
+        highText.text = "Best Tile: " + highestTile;
     }
     public void MainScore(int tileVal){
         score += tileVal;
