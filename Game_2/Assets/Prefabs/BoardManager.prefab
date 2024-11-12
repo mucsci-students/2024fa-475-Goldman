@@ -61,8 +61,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b30bc932300983443bbd9547a5179463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numPoints: 16
   numTiles: 0
   validMoveTaken: 0
+  direction: {x: 0, y: 0}
   script: {fileID: 0}
   track: {fileID: 0}
   tilePrefab: {fileID: 8404349330207716834, guid: e2abc085c6721334f88f2e2dee13cdba, type: 3}

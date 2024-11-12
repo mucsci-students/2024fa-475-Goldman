@@ -10,6 +10,7 @@ public class TileManager : MonoBehaviour
     private float waitTime = 0.3f;
     private int moveCounter;
 
+    public int numPoints;
     public int numTiles;
     public bool validMoveTaken;
     public Vector2 direction;
@@ -52,6 +53,7 @@ public class TileManager : MonoBehaviour
         if (numTiles == 16 && NoMoves())
         {
             timer = 0;
+            track.SaveScore();
             script.EndGame();
             return false;
         }
@@ -60,20 +62,20 @@ public class TileManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             direction = new Vector2(0, speed);
-            //StartCoroutine(MoveTiles(0, 16, 4, 4, 1));
-            foreach (PointScript point in pointList)
+            StartCoroutine(MoveTiles(4, 16, 4, 4, 1));
+            /*foreach (PointScript point in pointList)
             {
                 if (point.currentTile != null)
                 {
                     point.currentTile.GetComponent<Rigidbody2D>().velocity = direction;
                 }
-            }
+            }*/
         }
         else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             direction = new Vector2(-speed, 0);
-            //StartCoroutine(MoveTiles(3, 4, -1, 16, 4));
-            for (int i = 0; i < 4; i++)
+            StartCoroutine(MoveTiles(0, 4, 1, 16, 4));
+            /*for (int i = 0; i < 4; i++)
             {//iterate right by columns
                 for (int j = i; j < 16; j += 4)
                 {
@@ -82,13 +84,13 @@ public class TileManager : MonoBehaviour
                         pointList[j].currentTile.GetComponent<Rigidbody2D>().velocity = direction;
                     }
                 }
-            }
+            }*/
         }
         else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             direction = new Vector2(0, -speed);
-            //StartCoroutine(MoveTiles(12, 13, -4, 4, 1));
-            for (int i = 12; i >= 0; i -= 4)
+            StartCoroutine(MoveTiles(12, 13, -4, 4, 1));
+            /*for (int i = 12; i >= 0; i -= 4)
             {//iterate up by rows
                 for (int j = i; j < i + 4; j++)
                 {
@@ -97,12 +99,13 @@ public class TileManager : MonoBehaviour
                         pointList[j].currentTile.GetComponent<Rigidbody2D>().velocity = direction;
                     }
                 }
-            }
+            }*/
         }
         else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             direction = new Vector2(speed, 0);
-            //StartCoroutine(MoveTiles(3, 4, -1, 16, 4));
+            StartCoroutine(MoveTiles(3, 4, -1, 16, 4));
+            /*
             for (int i = 3; i >= 0; i--)
             {//iterate left by columns
                 for (int j = i; j < 16; j += 4)
@@ -112,7 +115,7 @@ public class TileManager : MonoBehaviour
                         pointList[j].currentTile.GetComponent<Rigidbody2D>().velocity = direction;
                     }
                 }
-            }
+            }*/
         }
         else
         {
@@ -147,7 +150,7 @@ public class TileManager : MonoBehaviour
         PointScript[] pointList = GetComponentsInChildren<PointScript>();
         for (int i = iStart; i >= 0 && i < iEnd; i += iInc)
         {
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.02f);
             //iterate left by columns
             for (int j = i; j < 16 && j < i + jEnd; j += jInc)
             {
@@ -172,12 +175,12 @@ public class TileManager : MonoBehaviour
         int index = Random.Range(0, 16);
         //once counter hits 40 assume that board is full
         int tempcounter = 0;
-        while (points[index].inUse && tempcounter < 128)
+        while (points[index].inUse && tempcounter < 256)
         {
             index = Random.Range(0, 16);
             tempcounter++;
         }
-        if (tempcounter == 128)
+        if (tempcounter == 256)
         {
             script.EndGame();
         }

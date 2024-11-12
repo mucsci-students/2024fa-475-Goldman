@@ -10,6 +10,11 @@ public class ScoreTracker : MonoBehaviour {
     public Text scoreText;
     public Text highText;
 
+    void Start()
+    {
+        score = PlayerPrefs.GetInt("MainScore", 0);
+        highestTile = PlayerPrefs.GetInt("MainTile", 4);
+    }
     public void MainScore(int tileVal){
         score += tileVal;
         if (tileVal > highestTile){
@@ -20,11 +25,11 @@ public class ScoreTracker : MonoBehaviour {
         //Debug.Log(score);
     }
     public void SaveScore(){
-        if(PlayerPrefs.GetInt("MainScore") < score){
+        if(PlayerPrefs.GetInt("MainScore", 0) < score){
             PlayerPrefs.SetInt("Mainscore", score);
         }
-        if(PlayerPrefs.GetInt("MainTile") < score){
-            PlayerPrefs.SetInt("MainTile", score);
+        if(PlayerPrefs.GetInt("MainTile", 4) < highestTile){
+            PlayerPrefs.SetInt("MainTile", highestTile);
         }
     }
 }
