@@ -36,10 +36,10 @@ public class MainMenuUI : MonoBehaviour
     }
     public void Start()
     {
-        NormalHS.text = "" + PlayerPrefs.GetInt("MainScore", 0);;
-        BigHS.text = "" + PlayerPrefs.GetInt("BigScore", 0);;
-        VersusP1HS.text = "P1: " + PlayerPrefs.GetInt("Player1Score", 0);;
-        VersusP2HS.text = "P2: " + PlayerPrefs.GetInt("Player2Score", 0);;
+        NormalHS.text = "" + PlayerPrefs.GetInt("MainScore", 0);
+        BigHS.text = "" + PlayerPrefs.GetInt("BigScore", 0);
+        VersusP1HS.text = "P1: " + PlayerPrefs.GetInt("Player1Score", 0);
+        VersusP2HS.text = "P2: " + PlayerPrefs.GetInt("Player2Score", 0);
         MainMenu.SetActive(true);
         GameModesUI.SetActive(false);
         OptionsMenuUI.SetActive(false);
@@ -84,5 +84,21 @@ public class MainMenuUI : MonoBehaviour
     public void HelpTextBack()
     {
         HelpText.SetActive(false);
+    }
+    public void ResetScores()
+    {
+        PlayerPrefs.SetInt("MainScore", 0);
+        PlayerPrefs.SetInt("BigScore", 0);
+        PlayerPrefs.SetInt("Player1Score", 0);
+        PlayerPrefs.SetInt("Player2Score", 0);
+        PlayerPrefs.SetInt("MainTile", 4);
+        PlayerPrefs.SetInt("BigTile", 4);
+        PlayerPrefs.SetInt("Player1Tile", 4);
+        PlayerPrefs.SetInt("Player2Tile", 4);
+
+        NormalHS.text = "0";
+        BigHS.text = "0";
+        VersusP1HS.text = "P1: 0";
+        VersusP2HS.text = "P2: 0";
     }
 }

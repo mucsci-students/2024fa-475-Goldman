@@ -448,7 +448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6319246859583045386, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
       propertyPath: tileSaveText
-      value: BigScore
+      value: BigTile
       objectReference: {fileID: 0}
     - target: {fileID: 6319246859583045386, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
       propertyPath: scoreSaveText
