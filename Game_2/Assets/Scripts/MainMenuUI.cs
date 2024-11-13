@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenuUI : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class MainMenuUI : MonoBehaviour
     public GameObject OptionsMenuUI;
     public GameObject HelpText;
     public GameObject MusicManager;
+    
+    public Text NormalHS;
+    public Text BigHS;
+    public Text VersusHS;
     public void StartGame()
     {
         SceneManager.LoadScene("Main");
