@@ -7,10 +7,11 @@ public class TileScript : MonoBehaviour
     private SpriteRenderer sprRend;
     private TileManager script;
     public PointScript point;
-    
+    [SerializeField] public AudioClip TileCombine;
+
     [SerializeField] public int value;
     [HideInInspector] public Rigidbody2D body;
-    
+
     public bool notYetMerged = true;
 
     void Start()
@@ -22,7 +23,7 @@ public class TileScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        
+
         if (other.tag == "Tile" && other.GetComponent<TileScript>().value == value && notYetMerged && other.GetComponent<TileScript>().notYetMerged)
         {
             script.validMoveTaken = true;
@@ -35,11 +36,11 @@ public class TileScript : MonoBehaviour
         else if (other.tag == "Point")
         {
             //only valid move if a new point is hit, not the current one
-            if(body.velocity.magnitude > 0 && other.GetComponent<PointScript>().currentTile != this.gameObject)
+            if (body.velocity.magnitude > 0 && other.GetComponent<PointScript>().currentTile != this.gameObject)
             {
-               script.validMoveTaken = true;
+                script.validMoveTaken = true;
             }
-            if(point.currentTile == this.gameObject)
+            if (point.currentTile == this.gameObject)
             {
                 point.inUse = false;
                 point.currentTile = null;
@@ -62,12 +63,12 @@ public class TileScript : MonoBehaviour
         float velX = script.direction.x;
         float velY = script.direction.y;
         //check if this tile and movement are left or this tile and movement are right
-        if(transform.position.x < other.transform.position.x && velX < 0 || transform.position.x > other.transform.position.x && velX > 0)
+        if (transform.position.x < other.transform.position.x && velX < 0 || transform.position.x > other.transform.position.x && velX > 0)
         {
             return true;
         }
         //check if this tile and movement are up or this tile and movement are down
-        if(transform.position.y < other.transform.position.y && velY < 0 || transform.position.y > other.transform.position.y && velY > 0)
+        if (transform.position.y < other.transform.position.y && velY < 0 || transform.position.y > other.transform.position.y && velY > 0)
         {
             return true;
         }
@@ -75,8 +76,8 @@ public class TileScript : MonoBehaviour
     }
     //updates tile with new values and deletes old one
     void TileMerge(Collider2D other)
-    {   
-        if(!notYetMerged || !other.GetComponent<TileScript>().notYetMerged)
+    {
+        if (!notYetMerged || !other.GetComponent<TileScript>().notYetMerged)
         {
             return;
         }
@@ -87,7 +88,7 @@ public class TileScript : MonoBehaviour
         other.GetComponent<TileScript>().notYetMerged = false;
         //resets other tile's point
         PointScript otherPoint = other.GetComponent<TileScript>().point;
-        if(otherPoint.currentTile == other.gameObject)
+        if (otherPoint.currentTile == other.gameObject)
         {
             otherPoint.inUse = false;
             otherPoint.currentTile = null;
@@ -97,6 +98,7 @@ public class TileScript : MonoBehaviour
         sprRend.sprite = Resources.Load<Sprite>(value + "Tile");
         body.velocity = new Vector2(0, 0);
         transform.position = point.transform.position;
+        SoundFXManager.instance.PlaySoundFXClip(TileCombine, transform, 1f);
     }
     IEnumerator AllowMerge()
     {

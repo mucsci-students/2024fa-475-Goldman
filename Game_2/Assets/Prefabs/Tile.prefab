@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   point: {fileID: 0}
+  TileCombine: {fileID: 8300000, guid: 78e1b8df977d4064a9938be950c96ff1, type: 3}
   value: 2
   body: {fileID: 6504076505654325065}
   notYetMerged: 1

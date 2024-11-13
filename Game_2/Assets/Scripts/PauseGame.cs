@@ -10,9 +10,7 @@ public class PauseGame : MonoBehaviour
 
     public GameObject PauseMenuUI;
     public GameObject GameOverUI;
-    
     public Text finalScore;
-
     public Text scoreText;
     public Manager script;
     // public GameObject[] player;
@@ -30,7 +28,7 @@ public class PauseGame : MonoBehaviour
             Time.timeScale = 0;
             PauseMenuUI.SetActive(true);
         }
-        else if(!script.isGameOver)// if game ended don't unpause
+        else if (!script.isGameOver)// if game ended don't unpause
         {
             // if paused, resume game and remove pause menu
             Time.timeScale = 1;

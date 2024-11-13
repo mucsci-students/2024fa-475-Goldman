@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreTracker : MonoBehaviour { 
+public class ScoreTracker : MonoBehaviour
+{
     //public TileManager script;
-    private int highestTile = 4;
+    private int highestTile = 2;
     private int score = 0;
 
     public Text scoreText;
@@ -17,13 +18,15 @@ public class ScoreTracker : MonoBehaviour {
     void Start()
     {
         //score = PlayerPrefs.GetInt("MainTile", 0);
-        
-        highestTile = PlayerPrefs.GetInt(tileSaveText, 4);
+
+        highestTile = PlayerPrefs.GetInt(tileSaveText, 2);
         highText.text = "Best Tile: " + highestTile;
     }
-    public void MainScore(int tileVal){
+    public void MainScore(int tileVal)
+    {
         score += tileVal;
-        if (tileVal > highestTile){
+        if (tileVal > highestTile)
+        {
             highestTile = tileVal;
             highText.text = "Best Tile: " + highestTile;
         }
@@ -40,11 +43,14 @@ public class ScoreTracker : MonoBehaviour {
     {
 
     }
-    public void SaveScore(){
-        if(PlayerPrefs.GetInt(scoreSaveText, 0) < score){
+    public void SaveScore()
+    {
+        if (PlayerPrefs.GetInt(scoreSaveText, 0) < score)
+        {
             PlayerPrefs.SetInt(scoreSaveText, score);
         }
-        if(PlayerPrefs.GetInt(tileSaveText, 4) < highestTile){
+        if (PlayerPrefs.GetInt(tileSaveText, 2) < highestTile)
+        {
             PlayerPrefs.SetInt(tileSaveText, highestTile);
         }
     }
