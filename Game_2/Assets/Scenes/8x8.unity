@@ -440,11 +440,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6319246859583045386, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
       propertyPath: tileSaveText
-      value: MainTile
+      value: BigScore
       objectReference: {fileID: 0}
     - target: {fileID: 6319246859583045386, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
       propertyPath: scoreSaveText
-      value: MainScore
+      value: BigScore
       objectReference: {fileID: 0}
     - target: {fileID: 6999457123714748626, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
       propertyPath: m_Camera
@@ -3153,8 +3153,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1685758842}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3197,32 +3197,32 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1316104600}
     m_ColliderPaths:
-    - - X: 50000000
-        Y: -47500000
-      - X: 50000000
-        Y: 47500000
-      - X: 48750000
-        Y: 50000000
-      - X: -49375000
-        Y: 50000000
-      - X: -50000000
-        Y: 49375000
-      - X: -50000000
-        Y: -49375000
-      - X: -48750000
-        Y: -50000000
-      - X: 48750000
-        Y: -50000000
+    - - X: 89999992
+        Y: -85499992
+      - X: 89999992
+        Y: 85499992
+      - X: 87750000
+        Y: 89999992
+      - X: -88875000
+        Y: 89999992
+      - X: -89999992
+        Y: 88875000
+      - X: -89999992
+        Y: -88875000
+      - X: -87750000
+        Y: -89999992
+      - X: 87750000
+        Y: -89999992
   m_CompositePaths:
     m_Paths:
-    - - {x: 4.8749833, y: -5}
-      - {x: 5, y: -4.7499943}
-      - {x: 4.999997, y: 4.7500057}
-      - {x: 4.8749833, y: 5}
-      - {x: -4.9375076, y: 4.9999924}
-      - {x: -5, y: 4.937489}
-      - {x: -4.999985, y: -4.9375076}
-      - {x: -4.8749943, y: -5}
+    - - {x: 8.774983, y: -8.999999}
+      - {x: 8.999999, y: -8.5499935}
+      - {x: 8.999997, y: 8.550005}
+      - {x: 8.774983, y: 8.999999}
+      - {x: -8.887507, y: 8.999992}
+      - {x: -8.999999, y: 8.887489}
+      - {x: -8.999984, y: -8.887507}
+      - {x: -8.774995, y: -8.999999}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -4855,6 +4855,14 @@ PrefabInstance:
       propertyPath: script
       value: 
       objectReference: {fileID: 1690040882}
+    - target: {fileID: 7783246387000629612, guid: e03abac0e06a0014d94f8427e41777fb, type: 3}
+      propertyPath: waitTime
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7783246387000629612, guid: e03abac0e06a0014d94f8427e41777fb, type: 3}
+      propertyPath: boardLength
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8106163528114353790, guid: e03abac0e06a0014d94f8427e41777fb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5
@@ -5331,7 +5339,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 9
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -5859,8 +5867,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 664157095}
   - {fileID: 1259944230}
