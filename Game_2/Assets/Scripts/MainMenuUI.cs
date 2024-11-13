@@ -14,7 +14,8 @@ public class MainMenuUI : MonoBehaviour
     
     public Text NormalHS;
     public Text BigHS;
-    public Text VersusHS;
+    public Text VersusP1HS;
+    public Text VersusP2HS;
     public void StartGame()
     {
         SceneManager.LoadScene("Main");
@@ -35,9 +36,14 @@ public class MainMenuUI : MonoBehaviour
     }
     public void Start()
     {
+        NormalHS.text = PlayerPrefs.GetInt("MainScore", 0);;
+        BigHS.text = PlayerPrefs.GetInt("BigScore", 0);;
+        VersusP1HS.text = "P1: " + PlayerPrefs.GetInt("Player1Score", 0);;
+        VersusP2HS.text = "P2: " + PlayerPrefs.GetInt("Player2Score", 0);;
         MainMenu.SetActive(true);
         GameModesUI.SetActive(false);
         OptionsMenuUI.SetActive(false);
+        
     }
     public void GameModes()
     {

@@ -344,7 +344,7 @@ GameObject:
   - component: {fileID: 343623157}
   - component: {fileID: 343623156}
   m_Layer: 5
-  m_Name: titleTextBox
+  m_Name: versusP1text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -852,7 +852,7 @@ GameObject:
   - component: {fileID: 543848656}
   - component: {fileID: 543848655}
   m_Layer: 5
-  m_Name: titleTextBox
+  m_Name: normalScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1737,7 +1737,7 @@ GameObject:
   - component: {fileID: 702362764}
   - component: {fileID: 702362763}
   m_Layer: 5
-  m_Name: titleTextBox
+  m_Name: 8x8scoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3462,6 +3462,10 @@ MonoBehaviour:
   OptionsMenuUI: {fileID: 904408937}
   HelpText: {fileID: 1165100655}
   MusicManager: {fileID: 376521277}
+  NormalHS: {fileID: 543848655}
+  BigHS: {fileID: 702362763}
+  VersusP1HS: {fileID: 343623156}
+  VersusP2HS: {fileID: 1508062488}
 --- !u!1 &1165100655
 GameObject:
   m_ObjectHideFlags: 0
@@ -4409,7 +4413,7 @@ GameObject:
   - component: {fileID: 1508062489}
   - component: {fileID: 1508062488}
   m_Layer: 5
-  m_Name: titleTextBox (1)
+  m_Name: versusP2text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6002,7 +6006,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1964288825
 RectTransform:
   m_ObjectHideFlags: 0
