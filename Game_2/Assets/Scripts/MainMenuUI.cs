@@ -9,12 +9,17 @@ public class MainMenuUI : MonoBehaviour
     public GameObject GameModesUI;
     public GameObject OptionsMenuUI;
     public GameObject HelpText;
+    public GameObject MusicManager;
     public void StartGame()
     {
         SceneManager.LoadScene("Main");
         Time.timeScale = 1;
     }
 
+    void Awake()
+    {
+        DontDestroyOnLoad(MusicManager);
+    }
     public void Start()
     {
         MainMenu.SetActive(true);
