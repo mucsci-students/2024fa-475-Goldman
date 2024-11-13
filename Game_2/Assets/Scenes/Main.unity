@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b4df4cfc8c6bda48b9196a29cd95cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreSaveText: MainScore
+  scoreSaveText: highestTile
   storyText: {fileID: 321136355}
 --- !u!114 &321136355
 MonoBehaviour:
@@ -296,7 +296,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &321136356
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -711,6 +711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGameOver: 0
   menu: {fileID: 1926764553}
+  player2Text: {fileID: 0}
 --- !u!4 &1078936611
 Transform:
   m_ObjectHideFlags: 0
