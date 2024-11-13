@@ -36,8 +36,8 @@ public class MainMenuUI : MonoBehaviour
     }
     public void Start()
     {
-        NormalHS.text = PlayerPrefs.GetInt("MainScore", 0);;
-        BigHS.text = PlayerPrefs.GetInt("BigScore", 0);;
+        NormalHS.text = "" + PlayerPrefs.GetInt("MainScore", 0);;
+        BigHS.text = "" + PlayerPrefs.GetInt("BigScore", 0);;
         VersusP1HS.text = "P1: " + PlayerPrefs.GetInt("Player1Score", 0);;
         VersusP2HS.text = "P2: " + PlayerPrefs.GetInt("Player2Score", 0);;
         MainMenu.SetActive(true);
