@@ -14,13 +14,16 @@ public class ScoreTracker : MonoBehaviour
     public string scoreSaveText;
     public string tileSaveText;
 
-
     void Start()
     {
         //score = PlayerPrefs.GetInt("MainTile", 0);
 
         highestTile = PlayerPrefs.GetInt(tileSaveText, 2);
         highText.text = "Best Tile: " + highestTile;
+    }
+    public int Score()
+    {
+        return score;
     }
     public void MainScore(int tileVal)
     {
@@ -32,16 +35,6 @@ public class ScoreTracker : MonoBehaviour
         }
         scoreText.text = "Score: " + score;
         //Debug.Log(score);
-    }
-    //scoring for 2v2
-    public void VersusScore()
-    {
-
-    }
-    //scoring for 8x8
-    public void BigScore()
-    {
-
     }
     public void SaveScore()
     {

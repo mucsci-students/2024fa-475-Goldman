@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class VersusManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class VersusManager : MonoBehaviour
     private int boardLength = 4;
     private float waitTime = 0.3f;
     public int numTiles;
+    public float endGameTimer = 60f;
 
     public Manager script;
     public TileManager player1;
@@ -27,8 +29,13 @@ public class VersusManager : MonoBehaviour
         {
             return;
         }
+        endGameTimer -=Time.deltaTime;
         player1Timer += Time.deltaTime;
         player2Timer += Time.deltaTime;
+        if(endGameTimer <= 0)
+        {
+            script.End2PlayerGame(player2.track.Score() > player1.track.Score());
+        }
         if (player1Timer > waitTime)
         {
             if (Player1MoveTaken())
