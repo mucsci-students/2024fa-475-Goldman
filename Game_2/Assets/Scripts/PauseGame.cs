@@ -36,13 +36,13 @@ public class PauseGame : MonoBehaviour
         }
     }
 
-    public void Restart()
+    public void Restart(int level)
     {
         // Reset player elements if necessary and set time and UI properly
         Time.timeScale = 1;
         PauseMenuUI.SetActive(false);
         GameOverUI.SetActive(false);
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene(level);
     }
 
     public void Quit()

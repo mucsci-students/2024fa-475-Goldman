@@ -1573,6 +1573,22 @@ PrefabInstance:
       propertyPath: m_CullTransparentMesh
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2085602882669446735, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2085602882669446735, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1276976171}
+    - target: {fileID: 2085602882669446735, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Restart
+      objectReference: {fileID: 0}
+    - target: {fileID: 2085602882669446735, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2157299617364920943, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
