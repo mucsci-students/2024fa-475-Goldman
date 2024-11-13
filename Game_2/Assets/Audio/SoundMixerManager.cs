@@ -9,7 +9,6 @@ public class SoundMixerManager : MonoBehaviour
 
     void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
         if (GameObject.FindGameObjectsWithTag("SoundMixerManager").Length > 1)
         {
             Destroy(gameObject);

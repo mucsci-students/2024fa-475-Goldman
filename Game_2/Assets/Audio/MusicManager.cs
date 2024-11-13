@@ -15,7 +15,6 @@ public class MusicManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(this.gameObject);
         }
     }
     void Start()
