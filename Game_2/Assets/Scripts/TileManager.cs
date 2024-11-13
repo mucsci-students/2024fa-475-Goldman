@@ -90,7 +90,7 @@ public class TileManager : MonoBehaviour
         //gets all tiles under object
     }
     //checks if any valid moves left
-    bool NoMoves()
+    public bool NoMoves()
     {
         TileScript[] scripts = GetComponentsInChildren<TileScript>();
         foreach (TileScript TS in scripts)
@@ -109,7 +109,7 @@ public class TileManager : MonoBehaviour
         }
         return true;
     }
-    IEnumerator MoveTiles(int iStart, int iEnd, int iInc, int jEnd, int jInc)
+    public IEnumerator MoveTiles(int iStart, int iEnd, int iInc, int jEnd, int jInc)
     {
         PointScript[] pointList = GetComponentsInChildren<PointScript>();
         for (int i = iStart; i >= 0 && i < iEnd; i += iInc)
@@ -128,10 +128,10 @@ public class TileManager : MonoBehaviour
     }
 
     //spawns in tile at a random unused point
-    IEnumerator SpawnTile()
+    public IEnumerator SpawnTile()
     {
         yield return new WaitForSeconds(waitTime - 0.1f);
-        if (!validMoveTaken && moveCounter > 0)
+        if (!validMoveTaken && moveCounter > 0 || versusMode && numTiles == numPoints && (!NoMoves()))
         {
             yield break;
         }
