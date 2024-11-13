@@ -561,10 +561,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundMixerManager
       objectReference: {fileID: 0}
-    - target: {fileID: 3185511895863113990, guid: c5c35a2ed242a4a4bbc12384f6c4ba95, type: 3}
-      propertyPath: m_TagString
-      value: Manager
-      objectReference: {fileID: 0}
     - target: {fileID: 8265373592508265055, guid: c5c35a2ed242a4a4bbc12384f6c4ba95, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1577.3561
@@ -3323,10 +3319,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicManager
       objectReference: {fileID: 0}
-    - target: {fileID: 4868298978052967292, guid: 84358e2b3355750409e46ef3cb7a8f26, type: 3}
-      propertyPath: m_TagString
-      value: Manager
-      objectReference: {fileID: 0}
     - target: {fileID: 6617820688472241516, guid: 84358e2b3355750409e46ef3cb7a8f26, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5204,10 +5196,6 @@ PrefabInstance:
     - target: {fileID: 5717519212261955243, guid: d81ecd4104371ac498d9e51dba9fbb93, type: 3}
       propertyPath: m_Name
       value: SFXManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 5717519212261955243, guid: d81ecd4104371ac498d9e51dba9fbb93, type: 3}
-      propertyPath: m_TagString
-      value: Manager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

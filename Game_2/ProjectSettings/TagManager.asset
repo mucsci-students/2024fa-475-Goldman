@@ -6,7 +6,9 @@ TagManager:
   tags:
   - Tile
   - Point
-  - Manager
+  - MusicManager
+  - SoundMixerManager
+  - SFXManager
   layers:
   - Default
   - TransparentFX
