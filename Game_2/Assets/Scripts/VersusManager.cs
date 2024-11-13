@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class VersusManager : MonoBehaviour
-{
+{ /*
     private float player1Timer;
     private float player2Timer;
     private int speed = 30;
@@ -162,4 +162,5 @@ public class VersusManager : MonoBehaviour
         }
         validMoveTaken = false;
     }
+    */
 }
