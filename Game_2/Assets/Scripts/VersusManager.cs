@@ -11,10 +11,11 @@ public class VersusManager : MonoBehaviour
     private int numPoints = 16;
     private int boardLength = 4;
     private float waitTime = 0.3f;
+    private float endGameTimer = 120f;
     public int numTiles;
-    public float endGameTimer = 60f;
 
     public Manager script;
+    public Text timer;
     public TileManager player1;
     public TileManager player2;
 
@@ -29,7 +30,8 @@ public class VersusManager : MonoBehaviour
         {
             return;
         }
-        endGameTimer -=Time.deltaTime;
+        endGameTimer -= Time.deltaTime;
+        timer.text = "Time left: " + endGameTimer;
         player1Timer += Time.deltaTime;
         player2Timer += Time.deltaTime;
         if(endGameTimer <= 0)
@@ -42,7 +44,6 @@ public class VersusManager : MonoBehaviour
             {
                 player1Timer = 0;
                 StartCoroutine(player1.SpawnTile());
-                StartCoroutine(player2.SpawnTile());
             }
         }
         if (player2Timer> waitTime)
@@ -51,7 +52,6 @@ public class VersusManager : MonoBehaviour
             {
                 player2Timer = 0;
                 StartCoroutine(player2.SpawnTile());
-                StartCoroutine(player1.SpawnTile());
             }
         }
 
@@ -62,7 +62,7 @@ public class VersusManager : MonoBehaviour
         if (player1.numTiles == numPoints && player1.NoMoves())
         {
             player1.track.SaveScore();
-            script.EndGame();
+            script.End2PlayerGame(true);
             return false;
         }
         if (Input.GetKeyDown(KeyCode.W))
@@ -98,7 +98,7 @@ public class VersusManager : MonoBehaviour
         if (player2.numTiles == numPoints && player2.NoMoves())
         {
             player2.track.SaveScore();
-            script.EndGame();
+            script.End2PlayerGame(false);
             return false;
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
