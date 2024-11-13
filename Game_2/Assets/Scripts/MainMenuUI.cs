@@ -15,6 +15,14 @@ public class MainMenuUI : MonoBehaviour
         SceneManager.LoadScene("Main");
         Time.timeScale = 1;
     }
+    public void StartMode2(){
+        SceneManager.LoadScene("8x8");
+        Time.timeScale = 1;
+    }
+    public void StartMode3(){
+        SceneManager.LoadScene("2Player");
+        Time.timeScale = 1;
+    }
 
     void Awake()
     {
