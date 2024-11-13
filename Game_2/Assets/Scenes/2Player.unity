@@ -770,7 +770,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Controls: WASD or Arrow Keys'
+  m_Text: 'Controls: WASD'
 --- !u!222 &835026039
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1501,6 +1501,10 @@ PrefabInstance:
       propertyPath: scoreSaveText
       value: Player2Score
       objectReference: {fileID: 0}
+    - target: {fileID: 6438969520682795223, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
+      propertyPath: m_Text
+      value: 'Controls: Arrow Keys'
+      objectReference: {fileID: 0}
     - target: {fileID: 6999457123714748626, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1525,6 +1529,10 @@ PrefabInstance:
       propertyPath: script
       value: 
       objectReference: {fileID: 1932227326}
+    - target: {fileID: 7156854279340493256, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
+      propertyPath: scoreText
+      value: 
+      objectReference: {fileID: 1534334679}
     - target: {fileID: 7663009546596883606, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -4417,6 +4425,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b30bc932300983443bbd9547a5179463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1906219486 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 929869585814397553, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
+  m_PrefabInstance: {fileID: 1276976169}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1932227325
 GameObject:
   m_ObjectHideFlags: 0
@@ -4449,6 +4468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGameOver: 0
   menu: {fileID: 1276976171}
+  player2Text: {fileID: 1906219486}
 --- !u!4 &1932227327
 Transform:
   m_ObjectHideFlags: 0
@@ -4477,6 +4497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numTiles: 0
+  endGameTimer: 60
   script: {fileID: 1932227326}
   player1: {fileID: 843619087}
   player2: {fileID: 1883347718}
