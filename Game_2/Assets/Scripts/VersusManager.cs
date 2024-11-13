@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TileManager : MonoBehaviour
+public class VersusManager : MonoBehaviour
 {
-    private float timer;
+    private float player1Timer;
+    private float player2Timer;
     private int speed = 30;
     private int moveCounter;
     private int numPoints;
-    //changed for different modes
-    [SerializeField] private int maxPow = 2;
-    [SerializeField] private float waitTime = 0.3f;
-    [SerializeField] private int boardLength = 4;
-    [SerializeField] private bool versusMode = false;
 
     public int numTiles;
     public bool validMoveTaken;
@@ -21,18 +17,16 @@ public class TileManager : MonoBehaviour
     public Manager script;
     public ScoreTracker track;
     public GameObject tilePrefab;
+    public TileManager player1;
+    public TileManager player2;
 
     void Start()
     {
-        moveCounter = -1;
-        numPoints = boardLength * boardLength;
-        timer = 0;
-        StartCoroutine(SpawnTile());
-        StartCoroutine(SpawnTile());
+        timer
     }
     void Update()
     {
-        if (Time.deltaTime == 0 || versusMode)
+        if (Time.deltaTime == 0)
         {
             return;
         }
