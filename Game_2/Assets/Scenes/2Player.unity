@@ -770,7 +770,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Controls: WASD or Arrow Keys'
+  m_Text: 'Controls: WASD'
 --- !u!222 &835026039
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1500,6 +1500,10 @@ PrefabInstance:
     - target: {fileID: 6319246859583045386, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
       propertyPath: scoreSaveText
       value: Player2Score
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438969520682795223, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
+      propertyPath: m_Text
+      value: 'Controls: Arrow Keys'
       objectReference: {fileID: 0}
     - target: {fileID: 6999457123714748626, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
       propertyPath: m_Camera
