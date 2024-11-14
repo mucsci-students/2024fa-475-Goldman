@@ -18,16 +18,16 @@ public class MainMenuUI : MonoBehaviour
     public Text VersusP2HS;
     public void StartGame()
     {
-        SceneManager.LoadScene("Main");
         Time.timeScale = 1;
+        SceneManager.LoadScene("Main");
     }
     public void StartMode2(){
-        SceneManager.LoadScene("8x8");
         Time.timeScale = 1;
+        SceneManager.LoadScene("8x8");
     }
     public void StartMode3(){
-        SceneManager.LoadScene("2Player");
         Time.timeScale = 1;
+        SceneManager.LoadScene("2Player");
     }
 
     void Awake()

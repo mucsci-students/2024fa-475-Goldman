@@ -114,7 +114,7 @@ public class TileManager : MonoBehaviour
         PointScript[] pointList = GetComponentsInChildren<PointScript>();
         for (int i = iStart; i >= 0 && i < iEnd; i += iInc)
         {
-            yield return new WaitForSeconds(0.017f);
+            yield return new WaitForSeconds(0.01f);
             //iterate left by columns
             for (int j = i; j < numPoints && j < i + jEnd; j += jInc)
             {
