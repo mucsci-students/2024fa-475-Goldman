@@ -1,4 +1,6 @@
 # 2024fa-475-Goldman
+Controls- WASD and arrow keys
+
 
 <https://docs.google.com/spreadsheets/d/10OKOYPMspzPQmpPiGCMK3zDVClexWCbn8KeI12z8cIE/edit?usp=sharing>
 
