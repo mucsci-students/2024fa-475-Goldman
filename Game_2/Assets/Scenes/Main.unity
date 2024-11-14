@@ -2788,6 +2788,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7156854279340493256, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
+      propertyPath: score1
+      value: 
+      objectReference: {fileID: 2992456432397650496}
+    - target: {fileID: 7156854279340493256, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
+      propertyPath: score2
+      value: 
+      objectReference: {fileID: 2992456432397650496}
+    - target: {fileID: 7156854279340493256, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
       propertyPath: script
       value: 
       objectReference: {fileID: 1078936610}

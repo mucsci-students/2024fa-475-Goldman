@@ -61,7 +61,7 @@ public class VersusManager : MonoBehaviour
     {
         if (player1.numTiles == numPoints && player1.NoMoves())
         {
-            player1.track.SaveScore();
+            SaveExit();
             script.End2PlayerGame(true);
             return false;
         }
@@ -97,7 +97,7 @@ public class VersusManager : MonoBehaviour
     {
         if (player2.numTiles == numPoints && player2.NoMoves())
         {
-            player2.track.SaveScore();
+            SaveExit();
             script.End2PlayerGame(false);
             return false;
         }
@@ -127,5 +127,10 @@ public class VersusManager : MonoBehaviour
             return false;
         }
         return true;
+    }
+    public void SaveExit()
+    {
+        player1.track.SaveScore();
+        player2.track.SaveScore();
     }
 }

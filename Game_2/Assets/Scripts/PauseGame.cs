@@ -12,6 +12,8 @@ public class PauseGame : MonoBehaviour
     public Text finalScore;
     public Text scoreText;
     public Manager script;
+    public ScoreTracker score1;
+    public ScoreTracker score2;
     // public GameObject[] player;
     public void GameOver()
     {
@@ -39,6 +41,8 @@ public class PauseGame : MonoBehaviour
     {
         // Reset player elements if necessary and set time and UI properly
         Time.timeScale = 1;
+        score1.SaveScore();
+        score2.SaveScore();
         PauseMenuUI.SetActive(false);
         GameOverUI.SetActive(false);
         SceneManager.LoadScene(level);
@@ -52,6 +56,8 @@ public class PauseGame : MonoBehaviour
 
     public void TitleScreen()
     {
+        score1.SaveScore();
+        score2.SaveScore();
         SceneManager.LoadScene("Title Screen");
     }
 
