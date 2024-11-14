@@ -2816,12 +2816,20 @@ PrefabInstance:
       value: Pause
       objectReference: {fileID: 0}
     - target: {fileID: 8464056438877389499, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8464056438877389499, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1926764553}
     - target: {fileID: 8464056438877389499, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Restart
+      objectReference: {fileID: 0}
+    - target: {fileID: 8464056438877389499, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9101925817403339760, guid: 4f60175f781e2e04991ca4b8926b3bc9, type: 3}
       propertyPath: m_IsActive
